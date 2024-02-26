@@ -1,0 +1,10 @@
+body {
+  background: linear-gradient(to bottom, #3c4450, #23282f);
+  color: #3b3d40;
+  font-size: 40px;
+}
+
+input, button, label {
+  margin-top: 30px;
+
+}

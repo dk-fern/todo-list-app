@@ -1,0 +1,179 @@
+.App-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    width: 80vw;
+    height: 80vh;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgb(186, 211, 192), #e0f4e3);
+    border-radius: 50px;
+}
+
+.center-content {
+display: flex;
+flex-direction: column;
+align-items: center; /* centers content vertically */
+justify-content: center; /* centers content horizontally */
+}
+  
+
+.item-container {
+display: flex;
+flex-direction: column; /* Arrange children vertically */
+}
+
+
+.create-button {
+    font-size: 18px;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(176, 194, 180, 0.75);
+}
+
+.modal-content {
+    background-color: #9bb0a0;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 25%;
+    border-radius: 25;
+}
+
+.close {
+    color: #565c56;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover {
+  cursor: default;
+  color: #212225;
+}
+
+.modal-button {
+    background-color: #999db0; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.modal-button:hover {
+    background-color: #4b4c54; /* Darker Green */
+}
+
+.large-textarea {
+  width: 100%; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #59595e;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #bad0bf;
+  }
+
+.create-button {
+    background-color: #999db0; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.create-button:hover {
+    background-color: #4b4c54; /* Darker Green */
+}
+
+.update-button {
+    background-color: #8cc78e; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 5px; /* Add some margin to separate buttons */
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .delete-button {
+    background-color: #eb9791; /* Red */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  /* Hover effects */
+  .update-button:hover {
+    background-color: #4c6d4e; /* Darker Green */
+  }
+  
+  .delete-button:hover {
+    background-color: rgb(130, 84, 84); /* Darker Red */
+  }
+
+  input[type="text"], textarea {
+    width: 100%; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    padding: 8px; /* Add padding inside the input boxes */
+    margin-bottom: 10px; /* Add some margin between input boxes */
+    box-sizing: border-box; /* Include padding and border in the total width/height */
+    font-size: 25px;
+    }
+
+
+  td {
+    word-wrap: break-word;
+  }
