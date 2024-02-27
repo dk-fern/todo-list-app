@@ -1,6 +1,7 @@
 from flask import request, jsonify
 from config import app, db
 from models import Item
+from functools import wraps
 
 ############################################################################
 # Each route will define API endpoints that the frontend can query.
@@ -17,8 +18,29 @@ from models import Item
 ############################################################################
 
 
+API_KEY = "12345"
+
+# Decorator function to authenticate API key
+def require_api_key(func):
+    @wraps(func)
+    def decorated_function(*args, **kwargs):
+        auth_header = request.headers.get("Authorization")
+
+        if auth_header and auth_header.startswith("Bearer "):
+            # Extract the API key from the Authorization header
+            api_key = auth_header.split("Bearer ")[1]
+
+            if api_key == API_KEY:
+                return func(*args, **kwargs)
+        
+        # If API key is missing or incorrect, return 401 Unauthorized
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    return decorated_function
+
 # Read contacts from the database. Returns the contact in json data
 @app.route("/items", methods=["GET"])
+@require_api_key
 def get_items():
     items = Item.query.all()
     json_items = list(map(lambda x: x.to_json(), items))
@@ -26,6 +48,7 @@ def get_items():
 
 # Create a new contact in the database. Turns each property into json data which is eventually turned into a full contact in the new_contact variable
 @app.route("/create_item", methods=["POST"])
+@require_api_key
 def create_item():
     item_name = request.json.get("itemName")
 
@@ -48,6 +71,7 @@ def create_item():
 # Update one or more properties of a contact. If any property is unchanged, the already stored data will remain and only new data will be changed.
 # <int:user_id> takes the user_id as it's own route
 @app.route("/update_item/<int:item_id>", methods=["PATCH"])
+@require_api_key
 def update_item(item_id):
     item = Item.query.get(item_id)
 
@@ -67,6 +91,7 @@ def update_item(item_id):
 # Deletes a contact from the database
 # <int:user_id> takes the user_id as it's own route
 @app.route("/delete_item/<int:item_id>", methods=["DELETE"])
+@require_api_key
 def delete_item(item_id):
     item = Item.query.get(item_id)
 

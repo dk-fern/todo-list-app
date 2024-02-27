@@ -1,12 +1,18 @@
 import React from "react";
 
+const apiKey = "12345"
+
 const ItemList = ({ items, updateItem, updateCallback }) => {
   const onDelete = async (id) => {
     try {
+        const url = `http://127.0.0.1:5000/delete_item/${id}`
         const options = {
             method: "DELETE",
+            headers: {
+              "Authorization": `Bearer ${apiKey}`
+            }
         }
-        const response = await fetch(`http://127.0.0.1:5000/delete_item/${id}`, options)
+        const response = await fetch(url, options)
         if (response.status === 200) {
             updateCallback()
         } else {

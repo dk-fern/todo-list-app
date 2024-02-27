@@ -1,5 +1,7 @@
 import {useState} from "react"
 
+const apiKey = "12345"
+
 const ItemForm = ({ existingItem = {}, updateCallback}) => {
     const [itemName, setItemName] = useState(existingItem.itemName || "")
     const [dueDate, setDueDate] = useState(existingItem.dueDate || "")
@@ -19,7 +21,8 @@ const ItemForm = ({ existingItem = {}, updateCallback}) => {
         const options = {
             method: updating ? "PATCH" : "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${apiKey}`
             },
             body: JSON.stringify(data)
         }

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import "./App.css";
 import ItemForm from "./ItemForm";
- 
+
 
 function App() {
   //Get all users and put them into our "state"
@@ -17,12 +17,19 @@ function App() {
 
   //Function to get contacts from our created endpoint
   const fetchItems = async () => {
+    const apiKey = "12345"
+    const url = "http://127.0.0.1:5000/items";
+    const options = {
+      headers: {
+        "Authorization": `Bearer ${apiKey}`
+      }
+    };
     //First wait for response from url
-    const response = await fetch("http://127.0.0.1:5000/items");
+    const response = await fetch(url, options);
     //Next load that returned response in json data
     const data = await response.json();
     setItems(data.items);
-    //console.log(data.items);
+    console.log(data.items);
   }
 
   const closeModal = () => {
