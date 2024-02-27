@@ -3,17 +3,30 @@
 Whether you're looking to test your web development and security engineering skills or desiring a project you can add to your resume, this is the project for you. In this project you will build fully functioning and visually appealing to-do list application with built-in security. 
 
 **This will grow your skills in:**
-- full-stack development with Python and JavaScript
+- full-stack development with Python and JavaScript *"using Flask and React"*
 - CRUD operations
 - using API keys
 - understanding API endpoints
-- backend React
-- frontend Flask
+- backend Flask *I would remove this for redundancy*
+- frontend React *Remove for redundancy*
 - docker containers 
+- *docker compose*
+
+> [!NOTE]
+> Overall I would say that the project part of this isn't learning full stack development, but it's using the full stack app that uses CRUD operations that I've created to demonstrate: 
+> API endpoints and authentication using keys
+> Docker containers
+> Docker compose
+>
+> The idea will be that: 
+> The api endpoints and security measures are highlighted in the project as a learning opportunity to how these things work
+> Someone can use a "test.py" file that I will create in the future as an easier way to see these things.
+> Someone can get hands on through creating their own docker images and docker compose file (this would be a how-to guide), then run them 
 
 Are you ready? [Let's get into it](projectguide.py).
 
 
+____________________________________________________________________
 
 ## Resources 
 
