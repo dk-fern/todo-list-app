@@ -1,16 +1,12 @@
 # To-Do List Web Application
 ### Work In Progress ###
-Whether you're looking to test your web development and security engineering skills or desiring a project you can add to your resume, this is the project for you. In this project you will build fully functioning and visually appealing to-do list application with built-in security. 
+In this project you will use fully functioning and visually appealing to-do list application to practice using api keys and endpoints to have a greater understanding of how API's work.
 
 **This will grow your skills in:**
-- full-stack development with Python and JavaScript *"using Flask and React"*
-- CRUD operations
-- using API keys
-- understanding API endpoints
-- backend Flask *I would remove this for redundancy*
-- frontend React *Remove for redundancy*
-- docker containers 
-- *docker compose*
+- Using CRUD operations
+- Understanding and applying API endpoints and authentication using keys
+- Docker containers 
+- Docker compose
 
 > [!NOTE]
 > Overall I would say that the project part of this isn't learning full stack development, but it's using the full stack app that uses CRUD operations that I've created to demonstrate: 
