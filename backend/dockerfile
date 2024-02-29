@@ -1,0 +1,22 @@
+FROM python:3.12-alpine3.19
+
+WORKDIR /app
+
+# Ensure sqlite packages are installed
+RUN apk update && \
+    apk add --no-cache sqlite && \
+    apk add --no-cache --virtual .build-deps gcc musl-dev
+
+COPY . .
+
+# Ensure the correct folder is installed. Currently giving full permissions-- Not great security
+RUN mkdir -p /app/data && \
+    chmod 777 /app/data
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 5000
+
+VOLUME /app/data
+
+CMD ["python", "main.py"]
