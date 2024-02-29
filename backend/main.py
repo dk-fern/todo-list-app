@@ -6,21 +6,21 @@ from functools import wraps
 ############################################################################
 # Each route will define API endpoints that the frontend can query.
 # Endpoints needed follow the "CRUD" methodology:
-# Create: Create a new contact and write to the database
-# Read: Read contacts from the database
-# Update: Update one or more properties of a contact
-# Destroy: Delete a user from the database
+#  -Create: Create a new contact and write to the database
+#  -Read: Read contacts from the database
+#  -Update: Update one or more properties of a contact
+#  -Destroy: Delete a user from the database
 ############################################################################
-# Contacts and the database:
-# The Contact class in models.py uses properties of the sqlalchemy library.
+# Items and the database:
+# The Item class in models.py uses properties of the sqlalchemy library.
 # Because of this, each function below uses functions from sqlalchemy 
-# like "query", "get", "add", "commit", etc.
+#   like "query", "get", "add", "commit", etc.
 ############################################################################
 
 
 API_KEY = "12345"
 
-# Decorator function to authenticate API key
+# Decorator function to authenticate API key. Wraps around the rest of the functions
 def require_api_key(func):
     @wraps(func)
     def decorated_function(*args, **kwargs):
@@ -38,7 +38,7 @@ def require_api_key(func):
     
     return decorated_function
 
-# Read contacts from the database. Returns the contact in json data
+# Read items from the database. Returns the item in json data
 @app.route("/items", methods=["GET"])
 @require_api_key
 def get_items():
@@ -46,7 +46,7 @@ def get_items():
     json_items = list(map(lambda x: x.to_json(), items))
     return jsonify({"items": json_items})
 
-# Create a new contact in the database. Turns each property into json data which is eventually turned into a full contact in the new_contact variable
+# Create a new item in the database. Turns each property into json data which is eventually turned into a full item in the new_item variable
 @app.route("/create_item", methods=["POST"])
 @require_api_key
 def create_item():
@@ -68,8 +68,8 @@ def create_item():
 
     return jsonify({"message": "Item created!"}), 201
 
-# Update one or more properties of a contact. If any property is unchanged, the already stored data will remain and only new data will be changed.
-# <int:user_id> takes the user_id as it's own route
+# Update one or more properties of an item. If any property is unchanged, the already stored data will remain and only new data will be changed.
+# <int:user_id> ensures each user id is defined in the api call
 @app.route("/update_item/<int:item_id>", methods=["PATCH"])
 @require_api_key
 def update_item(item_id):
@@ -88,8 +88,8 @@ def update_item(item_id):
 
     return jsonify({"Message": "Item updated"}), 201
 
-# Deletes a contact from the database
-# <int:user_id> takes the user_id as it's own route
+# Deletes an item from the database
+# <int:user_id> ensures each user id is defined in the api call
 @app.route("/delete_item/<int:item_id>", methods=["DELETE"])
 @require_api_key
 def delete_item(item_id):
@@ -108,4 +108,4 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
 
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)

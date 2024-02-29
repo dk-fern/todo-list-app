@@ -1,6 +1,6 @@
 from config import db
 
-# Create a contact class object that inherits properties of the db object
+# Create an item class object that inherits properties of the db object
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_name = db.Column(db.String(80), unique=False, nullable=False)

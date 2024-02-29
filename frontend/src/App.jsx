@@ -5,17 +5,17 @@ import ItemForm from "./ItemForm";
 
 
 function App() {
-  //Get all users and put them into our "state"
+  //Get all items and put them into our "state"
   const [items, setItems] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentItem, setCurrentItem] = useState({})
 
-  //As soon as this renders, call the fetchContacts function
+  //As soon as this renders, call the fetchItems function
   useEffect(() => {
     fetchItems()
   }, []);
 
-  //Function to get contacts from our created endpoint
+  //Function to get items from our backend endpoint
   const fetchItems = async () => {
     const apiKey = "12345"
     const url = "http://127.0.0.1:5000/items";
@@ -32,6 +32,8 @@ function App() {
     console.log(data.items);
   }
 
+  //The following 4 functions all set the conditions on if the modal (the popup create-item or edit-item window) is open.
+  //By default the modal is closed (false), but if the button is clicked, it will be set to "true" and open the modal window.
   const closeModal = () => {
     setIsModalOpen(false)
     setCurrentItem({})
@@ -52,6 +54,7 @@ function App() {
     fetchItems()
   }
 
+  //Return the html that is loaded into the browser. See App.css for styling
   return (
     <div className="App-container">
       <div className="App">
@@ -74,4 +77,5 @@ function App() {
 
 }
 
+//Export app to be used in main.jsx
 export default App
