@@ -1,5 +1,7 @@
 import React from "react";
 
+//NOTE: apikeys should be imported as environmental variables for greater security. 
+//      Because this is just a demonstration of their use, I hard-coded them
 const apiKey = "12345"
 
 const ItemList = ({ items, updateItem, updateCallback }) => {

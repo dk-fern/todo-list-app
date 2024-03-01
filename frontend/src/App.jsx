@@ -17,6 +17,8 @@ function App() {
 
   //Function to get items from our backend endpoint
   const fetchItems = async () => {
+    //NOTE: apikeys should be imported as environmental variables for greater security. 
+    //      Because this is just a demonstration of their use, I hard-coded them
     const apiKey = "12345"
     const url = "http://127.0.0.1:5000/items";
     const options = {

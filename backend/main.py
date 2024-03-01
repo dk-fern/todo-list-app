@@ -17,7 +17,8 @@ from functools import wraps
 #   like "query", "get", "add", "commit", etc.
 ############################################################################
 
-
+# NOTE: API keys shouldn't be hard coded as seen below. The more secure method is to set it as an environmental variable
+#       then import it using -> API_KEY = os.environ['variable_name']
 API_KEY = "12345"
 
 # Decorator function to authenticate API key. Wraps around the rest of the functions
