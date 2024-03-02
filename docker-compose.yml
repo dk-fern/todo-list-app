@@ -14,3 +14,8 @@ services:
       context: ./backend
     ports:
       - "5000:5000"
+    volumes:
+      - backend_data:/var/lib/db
+
+volumes:
+  backend_data: # Volume to store to-do list items
