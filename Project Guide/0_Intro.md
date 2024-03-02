@@ -1,0 +1,4 @@
+- Why was this created?
+- What will you learn?
+- Requirements
+    - > Note to writer: Beacuse everything is ran in Docker containers, having python and docker installed are the only more complex requirements. They don't have to install Nodejs (which is needed for React). They will however need to install the "requests library" for Python with "pip install requests" in the terminal.
