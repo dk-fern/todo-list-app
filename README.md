@@ -1,6 +1,6 @@
 # To-Do List Web Application
 ### Work In Progress ###
-In this project you will gain a greater understanding of API by practice using api keys and endpoints within a fully functioning and visually appealing to-do list application.
+In this project you will gain a greater understanding of API by practicing using api keys and endpoints within a fully functioning and visually appealing to-do list application.
 
 **This will grow your skills in:**
 - Using CRUD operations
