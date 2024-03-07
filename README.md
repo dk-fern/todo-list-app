@@ -8,7 +8,7 @@ In this project you will gain a greater understanding of API by practicing using
 - Docker containers 
 - Docker compose
 
-Are you ready? [Let's get into it]([0_Intro.md](https://github.com/dk-fern/todo-list-app/blob/main/Project%20Guide/0_Intro.md)).
+Are you ready? [Let's get into it](https://github.com/dk-fern/todo-list-app/blob/main/Project%20Guide/0_Intro.md).
 
 
 ____________________________________________________________________
